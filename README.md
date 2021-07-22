@@ -1,2 +1,2 @@
-# rice_cooker_bot
-Discord bot in the making
+# Rice Cooker Bot
+:rice: Discord bot in the making :rice:
