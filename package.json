@@ -1,0 +1,27 @@
+{
+  "name": "rice_cooker_bot",
+  "version": "1.0.0",
+  "description": "rice cooker bot for Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuon0029/rice_cooker_bot.git"
+  },
+  "keywords": [
+    "bot",
+    "discord"
+  ],
+  "author": "Kiet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vuon0029/rice_cooker_bot/issues"
+  },
+  "homepage": "https://github.com/vuon0029/rice_cooker_bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
+  }
+}
