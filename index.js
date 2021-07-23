@@ -25,7 +25,11 @@ for (const file of commandFiles) {
 }
 
 client.on("message", (message) => {
-  if (!message.content.startsWith(prefix) || message.author.bot) {
+  if (
+    !message.content.startsWith(prefix) ||
+    message.author.bot ||
+    message.channel.type === "dm"
+  ) {
     return;
   } else {
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -56,6 +60,16 @@ client.on("message", (message) => {
       case "/help":
         client.commands.get("help").execute(message);
         console.log(message.author.username, "requested /help");
+        break;
+
+      case "/cook":
+        client.commands.get("cook").execute(message, args);
+        console.log(message.author.username, "requested /cook");
+        break;
+
+      case "/timer":
+        client.commands.get("timer").execute(message, args);
+        console.log(message.author.username, "requested /timer");
         break;
 
       // functionality from https://www.youtube.com/watch?v=GYUc46XPlEI&t=254s

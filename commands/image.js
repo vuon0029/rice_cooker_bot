@@ -1,4 +1,5 @@
-var Scraper = require("images-scraper");
+const Scraper = require("images-scraper");
+const Discord = require("discord.js");
 
 const google = new Scraper({
   puppeteer: {
@@ -15,7 +16,7 @@ module.exports = {
       const image_query = args.join(" ");
       if (!image_query) {
         return message.channel.send(
-          "Image name not declared :sad: *sad rice cooker noises*"
+          "Image name not declared :cry: *sad rice cooker noises*"
         );
       } else {
         message.channel.send("*Cookin...*");
@@ -23,10 +24,12 @@ module.exports = {
       google
         .scrape(image_query, 1)
         .then((image_results) => {
-          message.channel.send(`So I found **${image_query}**: `, {
-            files: [image_results[0].url],
-            split: true,
-          });
+          const embed = new Discord.MessageEmbed()
+            .setImage(image_results[0].url)
+            .setTitle(`A wild **${image_query}** appeared`)
+            .setColor("#FF69B4")
+            .setDescription(`*What a pretty looking ${image_query}...*`);
+          message.channel.send(embed);
         })
         .catch((err) => {
           message.channel.send(`Error: ${err}`);
