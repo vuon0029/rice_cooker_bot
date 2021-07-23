@@ -18,8 +18,15 @@ module.exports = {
           "Image name not declared :( *sad rice cooker noises*"
         );
       }
-      const image_results = await google.scrape(image_query, 1);
-      message.channel.send(image_results[0].url);
+
+      google
+        .scrape(image_query, 1)
+        .then((image_results) => {
+          message.channel.send(image_results[0].url);
+        })
+        .catch((err) => {
+          message.channel.send(`Error: ${err}`);
+        });
     } catch (err) {
       message.channel.send(`My papa wrote shitty code... I'm ded
       ${err}`);
