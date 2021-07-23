@@ -25,6 +25,7 @@ module.exports = {
           message.channel.send(`So I found ${image_query}: `, {
             files: [image_results[0].url],
           });
+          console.log(image_results[0].url);
         })
         .catch((err) => {
           message.channel.send(`Error: ${err}`);
