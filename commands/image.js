@@ -22,7 +22,9 @@ module.exports = {
       google
         .scrape(image_query, 1)
         .then((image_results) => {
-          message.channel.send(image_results[0].url);
+          message.channel.send(`So I found ${image_query}: `, {
+            files: [image_results[0].url],
+          });
         })
         .catch((err) => {
           message.channel.send(`Error: ${err}`);
