@@ -10,7 +10,6 @@ module.exports = {
   name: "image",
   description: "Send back an image!",
   async execute(message, args) {
-    message.channel.send("*Cookin...*");
     try {
       const image_query = args.join(" ");
       if (!image_query) {
@@ -22,8 +21,10 @@ module.exports = {
       google
         .scrape(image_query, 1)
         .then((image_results) => {
+          message.channel.send("*Cookin...*");
           message.channel.send(`So I found ${image_query}: `, {
             files: [image_results[0].url],
+            split: true,
           });
           console.log(image_results[0].url);
         })
