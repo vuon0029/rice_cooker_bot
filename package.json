@@ -21,7 +21,11 @@
   },
   "homepage": "https://github.com/vuon0029/rice_cooker_bot#readme",
   "dependencies": {
+    "@discordjs/opus": "^0.5.3",
     "discord.js": "^12.5.3",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "images-scraper": "^6.3.0",
+    "yt-search": "^2.9.0",
+    "ytdl-core": "^4.9.0"
   }
 }
