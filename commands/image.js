@@ -15,7 +15,7 @@ module.exports = {
       const image_query = args.join(" ");
       if (!image_query) {
         return message.channel.send(
-          "Image name not declared :( *sad rice cooker noises*"
+          "Image name not declared :sad: *sad rice cooker noises*"
         );
       } else {
         message.channel.send("*Cookin...*");
