@@ -27,6 +27,6 @@
     "dotenv": "^10.0.0",
     "images-scraper": "^6.3.0",
     "yt-search": "^2.9.0",
-    "ytdl-core": "^4.9.0"
+    "ytdl-core": "^4.11.0"
   }
 }
